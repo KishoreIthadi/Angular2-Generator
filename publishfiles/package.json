@@ -1,6 +1,6 @@
 {
-    "name": "angular2-generator",
-    "version": "1.0.0",
+    "name": "angular2-gen",
+    "version": "1.0.1",
     "description": "Genrates angular2 project with various configurations like gulp, tslint etc.",
     "bin": {
         "a2": "src/app/index.js"

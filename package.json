@@ -1,5 +1,5 @@
 {
-  "name": "angular2-generator",
+  "name": "angular2-gen",
   "version": "1.0.0",
   "description": "Genrates angular2 project with various configurations like gulp",
   "scripts": {},
