@@ -1,0 +1,32 @@
+{
+  "name": "angular2-generator",
+  "version": "1.0.0",
+  "description": "Genrates angular2 project with various configurations like gulp",
+  "scripts": {},
+  "bin": {
+    "a2": "src/app/index.js"
+  },
+  "dependencies": {
+    "copy-dir": "^0.3.0",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-uglify": "^2.1.2",
+    "require-dir": "^0.3.1",
+    "run-sequence": "^1.2.2",
+    "babel-preset-es2015": "^6.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KishoreIthadi/Angular2-Generator.git"
+  },
+  "author": "kishore.ithadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KishoreIthadi/Angular2-Generator/issues"
+  },
+  "homepage": "https://github.com/KishoreIthadi/Angular2-Generator#readme"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "angular2-generator",
+    "version": "1.0.0",
+    "description": "Genrates angular2 project with various configurations like gulp, tslint etc.",
+    "bin": {
+        "a2": "src/app/index.js"
+    },
+    "dependencies": {
+        "copy-dir": "^0.3.0",
+        "prompt": "^1.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KishoreIthadi/Angular2-Generator.git"
+    },
+    "author": "kishore.ithadi",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/KishoreIthadi/Angular2-Generator/issues"
+    },
+    "homepage": "https://github.com/KishoreIthadi/Angular2-Generator#readme",
+    "keywords": [
+        "angular2",
+        "angular2 sample",
+        "angular2 generator",
+        "generator",
+        "a2"
+    ]
+}
