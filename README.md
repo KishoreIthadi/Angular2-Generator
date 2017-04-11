@@ -49,7 +49,7 @@ The above command will generate basic angular2 template as shown below.
 
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/basicSetup.png?raw=true "Basic Setup")
 
-##### b. Gulp Template
+##### b. Gulp Setup
 
 ```bash
 a2 gulp
@@ -74,3 +74,5 @@ npm run build-web
 The above command will generate production build in dist folder as shown below.
 
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/gulpDist.png?raw=true "Gulp Build")
+
+Note: The gulp setup is generated based on the **basicsetup** template. If you are running the gulp command on a different application you might have to change gulp tasks, index.html files accordingly.
