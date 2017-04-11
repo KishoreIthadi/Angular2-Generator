@@ -5,8 +5,14 @@ var copydir = require('copy-dir');
 var path = require('path');
 var fs = require('fs');
 
+/*
+Reading appname, version and discription from the user.
+Package.json will be created based on these values
+*/
 function readInput(destPath) {
 
+
+    // setting default values
     var input = {
         appname: 'my-app',
         version: '1.0.0',
@@ -14,18 +20,23 @@ function readInput(destPath) {
     }
 
     prompt.start();
+    // This property will remove the extra 'Prompt' console text displayed by prompt npm
+    prompt.message = '';
 
     var schema = {
         properties: {
             appname: {
                 pattern: /^[^A-Z\s]+$/,
-                message: 'follow package.json naming convention'
+                message: 'Invalid app name',
+                description: 'App Name'
             },
             version: {
-                message: 'Version?',
+                pattern: /^([v=]{0,2}\d+).(\d+).(\d+-[A-z0-9.]+[^\W_]|\d+)+$/,
+                message: 'Invalid version',
+                description: 'Version'
             },
             description: {
-                message: 'Description?',
+                description: 'Description'
             }
         }
     };
@@ -42,31 +53,36 @@ function readInput(destPath) {
             input.description = result.description;
         }
 
+        // initiating the copy process
         copy(input, destPath);
     });
 }
 
+/*
+Copies all the files requred for the basic template.
+While copying the files replaces the requre strig literals like appname,version title etc.
+*/
 function copy(input, destPath) {
 
+    // This will resolve the source path to the root folder
     var sourcePath = path.resolve(__dirname, '..', '..', '..') + "/generatorfiles/basicsetup/";
 
-    copydir.sync(sourcePath, destPath, function (stat, filepath, filename) {
+    copydir.sync(sourcePath, destPath,
+        function (stat, filepath, filename) {
 
             if (filename === 'index.html' || filename === 'app.component.html' ||
                 filename === 'package.json' || filename === 'app.component.ts') {
 
-                var temp1 = filepath;
-
-                fs.readFile(temp1, 'utf8', function (err, data) {
+                fs.readFile(filepath, 'utf8', function (err, data) {
                     if (err) {
                         return console.log(err);
                     }
 
                     var result = data;
-                    var temp2 = '';
+                    var temp = '';
 
                     if (filename === 'index.html') {
-                        temp2 = destPath + '/' + filename;
+                        temp = destPath + '/' + filename;
 
                         result = result.replace('<title>Angular2</title>', `<title>${input.appname}</title>`);
                         result = result.replace('<my-app>', `<${input.appname}>`);
@@ -74,14 +90,14 @@ function copy(input, destPath) {
                     }
 
                     if (filename === 'app.component.html') {
-                        temp2 = destPath + '/src/app/' + filename;
+                        temp = destPath + '/src/app/' + filename;
 
                         result = result.replace('<h1>title</h1>', `<h1>${input.appname}</h1>`);
                     }
 
                     if (filename === 'package.json') {
 
-                        temp2 = destPath + '/' + filename;
+                        temp = destPath + '/' + filename;
 
                         var jsonData = JSON.parse(result);
 
@@ -94,11 +110,11 @@ function copy(input, destPath) {
 
                     if (filename === 'app.component.ts') {
 
-                        temp2 = destPath + '/src/app/' + filename;
+                        temp = destPath + '/src/app/' + filename;
                         result = result.replace("my-app", `${input.appname}`);
                     }
 
-                    fs.writeFile(temp2, result, 'utf8', function (err) {
+                    fs.writeFile(temp, result, 'utf8', function (err) {
                         if (err) {
                             return console.log(err);
                         };
@@ -112,9 +128,13 @@ function copy(input, destPath) {
 
         },
         function (err) {
-            console.log('ok');
+            console.log(err);
         });
 }
+
+/*
+Exporting start function for the basicsetup
+*/
 
 module.exports = {
     start: function (destPath) {
