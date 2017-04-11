@@ -75,4 +75,4 @@ The above command will generate production build in dist folder as shown below.
 
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/gulpDist.png?raw=true "Gulp Build")
 
-Note: The gulp setup is generated based on the **basicsetup** template. If you are running the gulp command on a different application you might have to change gulp tasks, index.html files accordingly.
+Note: The gulp setup is generated based on the **basicsetup** template. If you are running the gulp command on a different application you might have to change gulp tasks and index.html file accordingly.
