@@ -1,20 +1,30 @@
 #!/usr/bin/env node
 
 const basicsetup = require('./basicsetup/basicsetup');
+const gulpsetup = require('./gulp/gulpsetup');
 
-var path = process.cwd();
+// Getting the command executed path
+var destPath = process.cwd();
 
 var myArgs = process.argv.splice(1);
 
-switch (myArgs[1]) {
-    case "basicsetup":
-        basicsetup.start(path);
-        break;
-    // case "gulp":
-    //     break;
-    // case "tslint":
-    //     break;
-    default:
-        console.error('invalid input');
-        break;
+/*
+The below logic will handle multiple options provided by the user
+For Example : a2 basicsetup gulp
+It will also log any invalid option
+*/
+
+for (let i = 1; i < myArgs.length; i++) {
+
+    switch (myArgs[i]) {
+        case "basicsetup":
+            basicsetup.start(destPath);
+            break;
+        case "gulp":
+            gulpsetup.start(destPath);
+            break;
+        default:
+            console.error('invalid input' + myArgs[i]);
+            break;
+    }
 }

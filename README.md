@@ -1,6 +1,6 @@
 # Angular2-Generator
 
-This project genrates **angular2 project templates** with various configurations like Gulp, TSLint etc.
+This project generates **angular2 project templates** with various configurations like Gulp, TSLint etc.
 
 ### Source Code
 
@@ -12,11 +12,11 @@ https://github.com/KishoreIthadi/Angular2-Generator
 
 ### Features
 
-| Commands             | Description                                                                                      |
-|----------------------|--------------------------------------------------------------------------------------------------|
-| a2 basicsetup        | Generates basic template with minimum dependencies used for developing angular2 app from scratch |
-| a2 gulp              | (Under Development) Generates gulp setup in the application.      .                              |
-| a2 tslint            | (Under Development) Generates tslint setup in the application.                                   |
+| Commands       | Description                                                                                         |
+|----------------|-----------------------------------------------------------------------------------------------------|
+| a2 basicsetup  | Generates basic template with minimum dependencies used for developing an angular2 app from scratch |
+| a2 gulp        | Generates gulp setup in the application.                                                            |
+| a2 tslint      | (Under Development) Generates tslint setup in the application.                                      |
 
 ### Getting started
 
@@ -45,6 +45,32 @@ npm install
 npm start
 ```
 
-The above command will genrate basic angular2 template as shown below.
+The above command will generate basic angular2 template as shown below.
 
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/basicSetup.png?raw=true "Basic Setup")
+
+##### b. Gulp Template
+
+```bash
+a2 gulp
+```
+
+**Install dependencies**
+```bash
+npm install
+```
+
+The above command will generate gulp configuration & task files as shown below.
+
+![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/gulpSetup.png?raw=true "Gulp Setup")
+
+
+**Run gulp build**
+
+```bash
+npm run build-web
+```
+
+The above command will generate production build in dist folder as shown below.
+
+![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/gulpDist.png?raw=true "Gulp Build")
