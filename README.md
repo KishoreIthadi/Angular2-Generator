@@ -12,11 +12,11 @@ https://github.com/KishoreIthadi/Angular2-Generator
 
 ### Features
 
-| Commands       | Description                                                                                         |
-|----------------|-----------------------------------------------------------------------------------------------------|
-| a2 basicsetup  | Generates basic template with minimum dependencies used for developing an angular2 app from scratch |
-| a2 gulp        | Generates gulp setup in the application.                                                            |
-| a2 tslint      | (Under Development) Generates tslint setup in the application.                                      |
+| Commands         | Description                                                                                 |
+|------------------|---------------------------------------------------------------------------------------------|
+| a2 basicsetup    | Generates basic template with minimum dependencies for developing angular2 app from scratch |
+| a2 gulp          | Generates gulp setup in the application.                                                    |
+| a2 tslint        | (Under Development) Generates tslint setup in the application.                              |
 
 ### Getting started
 
