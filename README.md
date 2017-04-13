@@ -24,7 +24,7 @@ https://github.com/KishoreIthadi/Angular2-Generator
 #### Step 1: Install Angular2-Generator Globally
 
 ```bash
-npm install -g Angular2-Gen
+npm install -g angular2-gen
 ```
 
 #### Step 2: Generator Commands
