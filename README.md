@@ -82,10 +82,6 @@ a2 basicsetup or a2 basicsetuprouter
 a2 gulp
 ```
 
-```bash
-a2 gulp
-```
-
 **Install dependencies**
 ```bash
 npm install
