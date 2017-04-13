@@ -10,8 +10,8 @@ gulp.task('vendor-js', () => {
             'node_modules/core-js/client/shim.js',
             'node_modules/zone.js/dist/zone.js',
             'node_modules/systemjs/dist/system.src.js',
-            // 'node_modules/jquery/dist/jquery.min.js'
-            // 'node_modules/bootstrap/dist/js/bootstrap.min.js'
+            'node_modules/jquery/dist/jquery.min.js',
+            'node_modules/bootstrap/dist/js/bootstrap.min.js'
         ])
         .pipe(concat('vendorjs.js'))
         .pipe(rename({
@@ -22,13 +22,13 @@ gulp.task('vendor-js', () => {
 });
 
 gulp.task('vendor-css', () => {
-    //     return gulp.src([
-    //             'node_modules/bootstrap/dist/css/bootstrap.min.css'
-    //         ])
-    //         .pipe(concat('vendorcss.css'))
-    //         .pipe(rename({
-    //             suffix: '.min'
-    //         }))
-    //         .pipe(cssMinify())
-    //         .pipe(gulp.dest('dist/src/css/'))
+    return gulp.src([
+            'node_modules/bootstrap/dist/css/bootstrap.min.css'
+        ])
+        .pipe(concat('vendorcss.css'))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(cssMinify())
+        .pipe(gulp.dest('dist/src/css/'))
 });

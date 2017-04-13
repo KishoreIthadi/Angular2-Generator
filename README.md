@@ -12,11 +12,12 @@ https://github.com/KishoreIthadi/Angular2-Generator
 
 ### Features
 
-| Commands         | Description                                                                                 |
-|------------------|---------------------------------------------------------------------------------------------|
-| a2 basicsetup    | Generates basic template with minimum dependencies for developing angular2 app from scratch |
-| a2 gulp          | Generates gulp setup in the application.                                                    |
-| a2 tslint        | (Under Development) Generates tslint setup in the application.                              |
+| Commands             | Description                                                                                  |
+|----------------------|----------------------------------------------------------------------------------------------|
+| a2 basicsetup        | Generates basic template with minimum dependencies for developing angular2 app from scratch. |
+| a2 basicsetuprouter  | Same as **basicsetup**. Adds router with navigation layout design.                           |
+| a2 gulp              | Generates gulp setup in the application.                                                     |
+| a2 tslint            | (Under Development) Generates tslint setup in the application.                               |
 
 ### Getting started
 
@@ -49,7 +50,29 @@ The above command will generate basic angular2 template as shown below.
 
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/basicSetup.png?raw=true "Basic Setup")
 
-##### b. Gulp Setup
+
+##### b. Basic Template With Router
+
+```bash
+a2 basictemplaterouter
+```
+
+**Install dependencies**
+```bash
+npm install
+```
+
+**Run the application**
+
+```bash
+npm start
+```
+
+The above command will generate basic angular2 template with router configuration as shown below. It will add Home, About & Contact views for demonstrating navigation between views.
+
+![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/basicSetupRouter.png?raw=true "Basic Router Setup")
+
+##### c. Gulp Setup
 
 ```bash
 a2 gulp
@@ -75,4 +98,11 @@ The above command will generate production build in dist folder as shown below.
 
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/gulpDist.png?raw=true "Gulp Build")
 
-Note: The gulp setup is generated based on the **basicsetup** template. If you are running the gulp command on a different application you might have to change gulp tasks and index.html file accordingly.
+Note: The gulp setup is generated based on the **basicsetup/basicsetuprouter** templates. If you are running the gulp command on a different application you might have to change gulp tasks and index.html file accordingly.
+
+For more advanced angular2 gulp build refer the below link
+
+```link
+https://github.com/KishoreIthadi/Angular2Gulp
+```
+
