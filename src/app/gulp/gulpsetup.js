@@ -90,6 +90,6 @@ Exporting start function for the gulpsetup
 
 module.exports = {
     start: function (destPath) {
-        return copy(destPath)
+        return copy(destPath);
     }
 };

@@ -18,7 +18,10 @@ for (let i = 1; i < myArgs.length; i++) {
 
     switch (myArgs[i]) {
         case "basicsetup":
-            basicsetup.start(destPath);
+            basicsetup.start(destPath,"basicsetup");
+            break;
+        case "basicsetuprouter":
+            basicsetup.start(destPath,"basicsetuprouter");
             break;
         case "gulp":
             gulpsetup.start(destPath);

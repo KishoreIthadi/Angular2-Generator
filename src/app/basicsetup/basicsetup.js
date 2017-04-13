@@ -9,8 +9,7 @@ var fs = require('fs');
 Reading appname, version and discription from the user.
 Package.json will be created based on these values
 */
-function readInput(destPath) {
-
+function readInput(destPath, setupType) {
 
     // setting default values
     var input = {
@@ -54,7 +53,7 @@ function readInput(destPath) {
         }
 
         // initiating the copy process
-        copy(input, destPath);
+        copy(input, destPath, setupType);
     });
 }
 
@@ -62,16 +61,17 @@ function readInput(destPath) {
 Copies all the files requred for the basic template.
 While copying the files replaces the requre strig literals like appname,version title etc.
 */
-function copy(input, destPath) {
+function copy(input, destPath, setupType) {
 
     // This will resolve the source path to the root folder
-    var sourcePath = path.resolve(__dirname, '..', '..', '..') + "/generatorfiles/basicsetup/";
+    var sourcePath = path.resolve(__dirname, '..', '..', '..') + "/generatorfiles/" + setupType + "/";
 
     copydir.sync(sourcePath, destPath,
         function (stat, filepath, filename) {
 
             if (filename === 'index.html' || filename === 'app.component.html' ||
-                filename === 'package.json' || filename === 'app.component.ts') {
+                filename === 'package.json' || filename === 'app.component.ts' ||
+                filename === 'header.component.html') {
 
                 fs.readFile(filepath, 'utf8', function (err, data) {
                     if (err) {
@@ -109,9 +109,14 @@ function copy(input, destPath) {
                     }
 
                     if (filename === 'app.component.ts') {
-
                         temp = destPath + '/src/app/' + filename;
                         result = result.replace("my-app", `${input.appname}`);
+                    }
+
+                    if (setupType === 'basicsetuprouter' && filename === 'header.component.html') {
+
+                        temp = destPath + '/src/app/layout/header/' + filename;
+                        result = result.replace("Angular2", `${input.appname}`);
                     }
 
                     fs.writeFile(temp, result, 'utf8', function (err) {
@@ -137,7 +142,7 @@ Exporting start function for the basicsetup
 */
 
 module.exports = {
-    start: function (destPath) {
-        return readInput(destPath)
+    start: function (destPath, setupType) {
+        return readInput(destPath, setupType)
     }
 };
