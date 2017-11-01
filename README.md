@@ -1,6 +1,6 @@
 # Angular2-Generator
 
-This project generates **angular2 project templates** with various configurations like Gulp, TSLint etc.
+This project generates **angular2 project templates** with various configurations like Router, Gulp, TSLint etc.
 
 ### Source Code
 
@@ -24,7 +24,7 @@ https://github.com/KishoreIthadi/Angular2-Generator
 #### Step 1: Install Angular2-Generator Globally
 
 ```bash
-npm install -g Angular2-Gen
+npm install -g angular2-gen
 ```
 
 #### Step 2: Generator Commands
@@ -32,7 +32,7 @@ npm install -g Angular2-Gen
 ##### a. Basic Template
 
 ```bash
-a2 basictemplate
+a2 basicsetup
 ```
 
 **Install dependencies**
@@ -54,7 +54,7 @@ The above command will generate basic angular2 template as shown below.
 ##### b. Basic Template With Router
 
 ```bash
-a2 basictemplaterouter
+a2 basicsetuprouter
 ```
 
 **Install dependencies**
@@ -73,6 +73,10 @@ The above command will generate basic angular2 template with router configuratio
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/basicSetupRouter.png?raw=true "Basic Router Setup")
 
 ##### c. Gulp Setup
+
+```bash
+a2 basicsetup or a2 basicsetuprouter
+```
 
 ```bash
 a2 gulp
@@ -94,7 +98,7 @@ The above command will generate gulp configuration & task files as shown below.
 npm run build-web
 ```
 
-The above command will generate production build in dist folder as shown below.
+The above command will generate production build in dist folder as shown below. The below build structure is for **basicsetup**, In case of **basicsetuprouter** the build structure will be different.
 
 ![Alt text](https://github.com/KishoreIthadi/Angular2-Generator/blob/master/readmefiles/images/gulpDist.png?raw=true "Gulp Build")
 
