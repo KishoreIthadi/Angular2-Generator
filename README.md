@@ -1,6 +1,6 @@
 # Angular2-Generator
 
-This project generates **angular2 project templates** with various configurations like Gulp, TSLint etc.
+This project generates **angular2 project templates** with various configurations like Router, Gulp, TSLint etc.
 
 ### Source Code
 
