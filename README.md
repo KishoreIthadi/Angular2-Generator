@@ -32,7 +32,7 @@ npm install -g angular2-gen
 ##### a. Basic Template
 
 ```bash
-a2 basictemplate
+a2 basicsetup
 ```
 
 **Install dependencies**
@@ -54,7 +54,7 @@ The above command will generate basic angular2 template as shown below.
 ##### b. Basic Template With Router
 
 ```bash
-a2 basictemplaterouter
+a2 basicsetuprouter
 ```
 
 **Install dependencies**
